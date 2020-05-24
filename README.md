@@ -1,5 +1,7 @@
 # Property Price Register CLI (unoffical)
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/robtec/ppr-go)](https://goreportcard.com/report/github.com/robtec/ppr-go)
+
 This cli allows you to query the sales listed on `https://www.propertypriceregister.ie`
 
 ## Installation
@@ -12,18 +14,19 @@ $ go get github.com/robtec/ppr-go/cmd/...
 
 ## Usage
 
-`ppr` supports the following options
+`$ ppr [options] address`
+
+supports the following options
 
 * `-c` - county to search, default Galway
 * `-yf` - year from to search, default 2010
 * `-yt` - year to search to, default 2020
-* `-a` - address to search
 * `-o` - change output, options are `json`, default `table`
 
 ### Example
 
 ```
-$ ppr -c mayo -yf 2019 -a "castlebar"
+$ ppr -c mayo -yf 2019 castlebar
 
 +------------+--------------------------------+----------------+
 |    DATE    |            ADDRESS             |     PRICE      |
@@ -47,7 +50,7 @@ $ ppr -c mayo -yf 2019 -a "castlebar"
 JSON output
 
 ```
-$ ppr -o json -c mayo -yf 2019 -a "castlebar"
+$ ppr -o json -c mayo -yf 2019 castlebar
 
 {
     "sales": [

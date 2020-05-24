@@ -8,9 +8,17 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 
 	"github.com/gocolly/colly"
 	"github.com/olekukonko/tablewriter"
+)
+
+var (
+	// Version placeholder for -v option
+	Version = "0"
+	// CommitID placeholder for -v option
+	CommitID = "0"
 )
 
 type result struct {
@@ -30,10 +38,16 @@ func main() {
 	county := flag.String("c", "galway", "select county")
 	yearFrom := flag.String("yf", "2010", "select year to search from")
 	yearTo := flag.String("yt", "2020", "select year to search to")
-	address := flag.String("a", "2020", "select address to search")
 	output := flag.String("o", "table", "output to table (default) or json")
 
 	flag.Parse()
+
+	if len(flag.Args()) == 0 {
+		fmt.Fprintf(os.Stderr, "missing required address argument\n")
+		os.Exit(2)
+	}
+
+	address := strings.Join(flag.Args(), " ")
 
 	host := "www.propertypriceregister.ie"
 
@@ -41,7 +55,7 @@ func main() {
 
 	path := "/Website/npsra/PPR/npsra-ppr.nsf/PPR-By-Date"
 
-	query := fmt.Sprintf("&Start=1&Query=[dt_execution_date]>=01/01/%s AND [dt_execution_date]<01/01/%s AND [address]=*%s* AND [dc_county]=%s", *yearFrom, *yearTo, *address, *county)
+	query := fmt.Sprintf("&Start=1&Query=[dt_execution_date]>=01/01/%s AND [dt_execution_date]<01/01/%s AND [address]=*%s* AND [dc_county]=%s", *yearFrom, *yearTo, address, *county)
 
 	url := fullHost + path + query
 
