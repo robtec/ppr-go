@@ -7,7 +7,7 @@ This cli allows you to query the sales listed on `https://www.propertypriceregis
 Using go
 
 ```
-$ go install github.com/robtec/ppr-gp/cmd/...
+$ go get github.com/robtec/ppr-go/cmd/...
 ```
 
 ## Usage
