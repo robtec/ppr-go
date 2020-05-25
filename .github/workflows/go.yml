@@ -1,4 +1,4 @@
-name: Go
+name: release
 
 on:
   push:
@@ -31,4 +31,4 @@ jobs:
         fi
 
     - name: Build
-      run: go build -v cmd/ppr/
+      run: go build -v ./cmd/ppr
