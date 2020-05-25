@@ -8,7 +8,9 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
+	"time"
 
 	"github.com/gocolly/colly"
 	"github.com/olekukonko/tablewriter"
@@ -35,9 +37,11 @@ type sale struct {
 
 func main() {
 
+	nextYear := strconv.Itoa(time.Now().Year() + 1)
+
 	county := flag.String("c", "galway", "select county")
 	yearFrom := flag.String("yf", "2010", "select year to search from")
-	yearTo := flag.String("yt", "2020", "select year to search to")
+	yearTo := flag.String("yt", nextYear, "select year to search to")
 	output := flag.String("o", "table", "output to table (default) or json")
 
 	flag.Parse()

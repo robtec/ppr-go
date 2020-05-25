@@ -20,7 +20,7 @@ supports the following options
 
 * `-c` - county to search, default Galway
 * `-yf` - year from to search, default 2010
-* `-yt` - year to search to, default 2020
+* `-yt` - year to search to, default next year
 * `-o` - change output, options are `json`, default `table`
 
 ### Example
