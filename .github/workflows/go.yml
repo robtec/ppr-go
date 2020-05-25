@@ -32,3 +32,9 @@ jobs:
 
     - name: Build
       run: go build -v ./cmd/ppr
+    
+    - name: Deploy
+      uses: actions/upload-artifact@v2
+      with:
+        name: ppr
+        path: ppr
