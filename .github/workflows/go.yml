@@ -1,4 +1,4 @@
-name: release
+name: ci
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 jobs:
 
   build:
-    name: CI
+    name: build
     runs-on: ubuntu-latest
     steps:
 
@@ -24,9 +24,6 @@ jobs:
 
     - name: test go get
       run: go get -v github.com/robtec/ppr-go/cmd/...
-
-    - name: test ppr help
-      run: ppr --help
 
     - name: Build
       run: make build
