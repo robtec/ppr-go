@@ -9,7 +9,7 @@ on:
 jobs:
 
   build:
-    name: Build
+    name: CI
     runs-on: ubuntu-latest
     steps:
 
@@ -31,7 +31,7 @@ jobs:
         fi
 
     - name: Build
-      run: go build -v ./cmd/ppr
+      run: make install
     
     - name: Deploy
       uses: actions/upload-artifact@v2
