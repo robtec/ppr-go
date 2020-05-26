@@ -1,6 +1,7 @@
 # Property Price Register CLI (unoffical)
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/robtec/ppr-go)](https://goreportcard.com/report/github.com/robtec/ppr-go)
+![ci](https://github.com/robtec/ppr-go/workflows/ci/badge.svg)
 
 This cli allows you to query the sales listed on `https://www.propertypriceregister.ie`
 
