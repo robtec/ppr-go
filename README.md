@@ -20,7 +20,7 @@ $ go get github.com/robtec/ppr-go/cmd/...
 supports the following options
 
 * `-c` - county to search, default Galway
-* `-yf` - year from to search, default 2010
+* `-yf` - year from to search, default this year
 * `-yt` - year to search to, default next year
 * `-o` - change output, options are `json`, default `table`
 
