@@ -17,3 +17,4 @@ jobs:
         GOOS: linux
         CMD_PATH: "./cmd/ppr"
         PROJECT_NAME: ppr
+        EXTRA_FILES: "VERSION"
