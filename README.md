@@ -15,13 +15,15 @@ $ go get github.com/robtec/ppr-go/cmd/...
 
 ## Usage
 
+Use the following syntax to run `ppr` commands from your terminal window
+
 `$ ppr [options] address`
 
-supports the following options
+available `options`
 
 * `-c` - county to search, default Galway
-* `-yf` - year from to search, default this year
-* `-yt` - year to search to, default next year
+* `-yf` - year from to search, default `2010`
+* `-yt` - year to search to, default next year `now.Year() + 1`
 * `-o` - change output, options are `json`, default `table`
 
 ### Example
