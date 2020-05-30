@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: build and push
-      uses: robtec/go-release.action@v1.0.2
+      uses: robtec/go-release.action@master
       env:
         GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         GOARCH: amd64
