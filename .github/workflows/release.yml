@@ -2,7 +2,7 @@ on:
   release:
     types: [published]
 
-name: cd
+name: release
 jobs:
   release-linux-amd64:
     name: linux64
@@ -15,6 +15,34 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         GOARCH: amd64
         GOOS: linux
+        CMD_PATH: "./cmd/ppr"
+        PROJECT_NAME: ppr
+        EXTRA_FILES: "VERSION"
+  release-windows-amd64:
+    name: windows64
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: build and push
+      uses: robtec/go-release.action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        GOARCH: amd64
+        GOOS: windows
+        CMD_PATH: "./cmd/ppr"
+        PROJECT_NAME: ppr
+        EXTRA_FILES: "VERSION"
+  release-osx-amd64:
+    name: osx64
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: build and push
+      uses: robtec/go-release.action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        GOARCH: amd64
+        GOOS: darwin
         CMD_PATH: "./cmd/ppr"
         PROJECT_NAME: ppr
         EXTRA_FILES: "VERSION"
