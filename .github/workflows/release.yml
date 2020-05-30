@@ -12,4 +12,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         GOARCH: amd64
         GOOS: linux
-        CMD_PATH: "cmd/ppr/main.go"
+        CMD_PATH: "./cmd/ppr"
