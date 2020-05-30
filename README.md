@@ -13,6 +13,8 @@ Using go
 $ go get github.com/robtec/ppr-go/cmd/...
 ```
 
+or head over to [Releases](https://github.com/robtec/ppr-go/releases)
+
 ## Usage
 
 Use the following syntax to run `ppr` commands from your terminal window
