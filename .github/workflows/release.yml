@@ -2,7 +2,7 @@ on:
   release:
     types: [published]
 
-name: Build Release
+name: cd
 jobs:
   release-linux-amd64:
     name: release linux/amd64
