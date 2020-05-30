@@ -31,19 +31,3 @@ jobs:
 
     - name: Build
       run: make build
-    
-    - name: release-linux-x64
-      uses: ngs/go-release.action@v1.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-        GOARCH: "amd64"
-        GOOS: linux
-        CMD_PATH: "cmd/ppr/main.go"
-
-    - name: release-windows-x64
-      uses: ngs/go-release.action@v1.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-        GOARCH: "amd64"
-        GOOS: windows
-        CMD_PATH: "cmd/ppr/main.go"
