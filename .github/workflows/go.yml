@@ -32,8 +32,16 @@ jobs:
     - name: Build
       run: make build
     
-    - name: Deploy
-      uses: actions/upload-artifact@v2
-      with:
-        name: ppr-releases
-        path: dist
+    - name: release-linux-x64
+      uses: ngs/go-release.action@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GOARCH: "amd64"
+        GOOS: linux
+
+    - name: release-windows-x64
+      uses: ngs/go-release.action@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GOARCH: "amd64"
+        GOOS: windows
