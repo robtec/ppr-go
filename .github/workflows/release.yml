@@ -16,3 +16,4 @@ jobs:
         GOARCH: amd64
         GOOS: linux
         CMD_PATH: "./cmd/ppr"
+        PROJECT_NAME: ppr
