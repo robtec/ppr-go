@@ -23,6 +23,12 @@ var (
 	CommitID = "0"
 )
 
+const (
+	host     = "www.propertypriceregister.ie"
+	fullHost = "https://" + host
+	path     = "/Website/npsra/PPR/npsra-ppr.nsf/PPR-By-Date"
+)
+
 type result struct {
 	Sales []sale `json:"sales"`
 	Total int    `json:"total"`
@@ -58,12 +64,6 @@ func main() {
 	}
 
 	address := strings.Join(flag.Args(), " ")
-
-	host := "www.propertypriceregister.ie"
-
-	fullHost := "https://" + host
-
-	path := "/Website/npsra/PPR/npsra-ppr.nsf/PPR-By-Date"
 
 	query := fmt.Sprintf("&Start=1&Query=[dt_execution_date]>=01/01/%s AND [dt_execution_date]<01/01/%s AND [address]=*%s* AND [dc_county]=%s", *yearFrom, *yearTo, address, *county)
 
@@ -124,6 +124,7 @@ func main() {
 		}
 
 		fmt.Println(string(jsonData))
+
 	} else {
 
 		table := tablewriter.NewWriter(os.Stdout)
