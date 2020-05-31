@@ -43,8 +43,14 @@ func main() {
 	yearFrom := flag.String("yf", "2010", "select year to search from")
 	yearTo := flag.String("yt", nextYear, "select year to search to")
 	output := flag.String("o", "table", "output to table (default) or json")
+	version := flag.Bool("v", false, "prints current version")
 
 	flag.Parse()
+
+	if *version {
+		fmt.Println(Version + " - " + CommitID)
+		os.Exit(0)
+	}
 
 	if len(flag.Args()) == 0 {
 		fmt.Fprintf(os.Stderr, "missing required address argument\n")
