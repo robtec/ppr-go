@@ -2,10 +2,12 @@
 
 set -eux
 
-COMMIT_ID=$(git rev-parse --short HEAD)
-VERSION=$(cat VERSION)
+EXT=''
+if [ $GOOS == 'windows' ]; then
+EXT='.exe'
+fi
 
-go build -ldflags "-X main.Version=$(VERSION) -X main.CommitID=$(COMMIT_ID)" ./cmd/ppr
+make build
 
 OUTPUT="${PROJECT_NAME}${EXT}"
 

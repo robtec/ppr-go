@@ -9,9 +9,9 @@ all: clean build
 
 clean:
 	@echo ">> cleaning..."
-	@rm -rf $(DIST)
+	@rm $(BIN)*
 
 build:
-	@go build -o ${DIST}/${BIN} -ldflags "-X main.Version=$(VERSION) -X main.CommitID=$(COMMIT_ID)" ./cmd/ppr
+	@go build -ldflags "-X main.Version=$(VERSION) -X main.CommitID=$(COMMIT_ID)" ./cmd/ppr
 
 .PHONY: all clean build
