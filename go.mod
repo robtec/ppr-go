@@ -1,4 +1,4 @@
-module githib.com/robtec/ppr
+module githib.com/robtec/ppr-go
 
 go 1.15
 
