@@ -15,7 +15,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         GOARCH: amd64
         GOOS: linux
-        CMD_PATH: "./cmd/ppr"
         PROJECT_NAME: ppr
         EXTRA_FILES: "VERSION"
   release-windows-amd64:
@@ -29,7 +28,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         GOARCH: amd64
         GOOS: windows
-        CMD_PATH: "./cmd/ppr"
         PROJECT_NAME: ppr
         EXTRA_FILES: "VERSION"
   release-osx-amd64:
@@ -43,6 +41,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         GOARCH: amd64
         GOOS: darwin
-        CMD_PATH: "./cmd/ppr"
         PROJECT_NAME: ppr
         EXTRA_FILES: "VERSION"
